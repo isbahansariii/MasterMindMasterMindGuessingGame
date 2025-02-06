@@ -45,6 +45,7 @@ p{
 #target-container {
     display: flex;
     gap: 12px;
+    justify-content: center;
 }
 
 .target-box {
