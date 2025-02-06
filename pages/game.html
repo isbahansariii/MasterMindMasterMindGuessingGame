@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+
+    <!-- CSS links -->
+    <link rel="stylesheet" href="../styles/game.css">
+    <link rel="stylesheet" href="../styles/toogleMenu.css">
+
+</head>
+<body>
+    <nav>
+        <h1>MasterMind Guessing Game</h1>
+        <button class="menu-toggle">&#9776;</button>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./teamMembers.html">Team Member</a></li>
+            <li><a href="./game.html">Game</a></li>
+            <li><a href="./flowchart.html">FlowChart</a></li>
+        </ul>
+    </nav>
+    <h1> 🎯 Mastermind Game</h1>
+    <p>Let's check your guessing power..</p>
+    <section class="game-container">
+        <section id="target-container">
+            <section class="target-box" id="slot-1"></section>
+            <section class="target-box" id="slot-2"></section>
+            <section class="target-box" id="slot-3"></section>
+            <section class="target-box" id="slot-4"></section>
+        </section>
+    </section>
+    
+    <section class="draggable-container">
+        <section class="draggable-box red"><p>1</p></section>
+        <section class="draggable-box teal" ><p>2</p></section>
+        <section class="draggable-box green" ><p>3</p></section>
+        <section class="draggable-box yellow" ><p>4</p></section>
+        <section class="draggable-box purple" ><p>5</p></section>
+        <section class="draggable-box orange" ><p>6</p></section>
+    </section>
+    
+    <section style="display: flex; align-items: center; justify-content: center; gap: 2%; margin-top: 40px;">
+        <button id="submit-btn" class="btn" >Check Guess</button>
+        <button id="restart-btn" class="btn">Restart Game</button>
+    </section>
+    
+    <section id="hint-message"></section>
+    
+    <!-- JS for game logic -->
+    <script src="../scripts/script.js"></script>
+
+    <!-- JS for toogle menu -->
+    <script src="../scripts/toogleMenu.js"></script>
+</body>
+</html>

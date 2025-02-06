@@ -1,0 +1,46 @@
+/* Responsive Styles Toogle Menu for Mobile */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .menu-toggle:focus {
+    outline: none;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: black;
+    width: 100%;
+    text-align: center;
+    border-top: 2px solid darkred;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid darkred;
+  }
+}

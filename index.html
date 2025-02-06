@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mastermind Game</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/toogleMenu.css">
+
+
+  </head>
+  <body>
+    <nav>
+      <h1>MasterMind Guessing Game</h1>
+      <button class="menu-toggle">&#9776;</button>
+      <ul>
+        <li><a href="./index.html" aria-current="page">Home</a></li>
+        <li><a href="./pages/teamMembers.html">Team Member</a></li>
+        <li><a href="./pages/game.html">Game</a></li>
+        <li><a href="./pages/flowchart.html">FlowChart</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="hero">
+        <h2>Can You Crack the Encrypted Code?</h2>
+        <p>
+          Test your logical skills and beat the mastermind in this ultimate
+          guessing challenge.
+        </p>
+        <a href="./pages/game.html" class="btn">Start Game</a>
+      </section>
+
+      <section id="how-to-play">
+        <h2>How to Play</h2>
+        <ol>
+          <li>Drag and drop colors to fill the code slots.</li>
+          <li>Click "Submit" to check your guess.</li>
+          <li>Black ✔ means correct color & position.</li>
+          <li>White ⚪ means correct color but wrong position.</li>
+          <li>Continue guessing until you crack the code!</li>
+        </ol>
+      </section>
+    </main>
+    <footer>
+      <p>Mastermind Game.</p>
+      <p>&copy; All rights reserved.</p>
+    </footer>
+
+    <!-- JS for toogle menu -->
+    <script src="./scripts/toogleMenu.js"></script>
+    
+  </body>
+</html>

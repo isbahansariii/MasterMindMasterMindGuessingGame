@@ -1,0 +1,109 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    padding: 2px 4px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:3px dashed darkred;
+}
+nav>ul{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+nav>ul>li{
+    list-style-type:none ;
+}
+nav>ul>li>a{
+    color: white;
+    text-decoration: none;
+}
+nav>h1{
+    /* color: #333; */
+    font-size:20px;
+}
+.menu-toggle {
+    display: none; /* Hide by default */
+}
+.hero {
+    background:linear-gradient( black, rgb(128, 4, 4));
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #c01826;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #000;
+}
+
+#how-to-play{
+    padding: 20px 10px;
+}
+#how-to-play>h2{
+    text-align: center;
+}
+#how-to-play ol {
+    list-style: decimal;
+    font-size: 18px;
+}
+#how-to-play li {
+    margin-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background: #222;
+    padding: 10px;
+    font-size: 14px;
+    color: #aaa;
+    /* margin-top: 20px; */
+    /* text-align: center; */
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    
+
+    .hero h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}

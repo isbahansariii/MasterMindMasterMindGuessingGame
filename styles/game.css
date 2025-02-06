@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 2px 5px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:3px dashed darkred;
+}
+nav>ul{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+nav>ul>li{
+    list-style-type:none ;
+}
+nav>ul>li>a{
+    color: white;
+    text-decoration: none;
+}
+nav>h1{
+    font-size:20px;
+}
+
+h1 {
+    font-size:45px;
+}
+ 
+p{
+    font-size:16px;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+#target-container {
+    display: flex;
+    gap: 12px;
+}
+
+.target-box {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.target-box:hover{
+    border: 2px dashed crimson;
+}
+
+.draggable-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.draggable-box {
+    box-shadow: 1px 1px 5px #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.draggable-box > p{
+    color: #fff;
+}
+
+.red { background-color: red; }
+.teal { background-color: teal; }
+.green { background-color: green; }
+.yellow { background-color: yellow; }
+.purple { background-color: purple; }
+.orange { background-color: orange; }
+
+/* Button */
+.btn{
+    /* margin-top: 20px; */
+    padding: 1vw 1vw;
+    font-size: 16px;
+    color: white;
+    border: none;
+    box-shadow: 1px 2px 5px #2a2a2a;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* Restart Button */
+#restart-btn{
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    background-color: red;
+}
+#restart-btn:hover{
+    background-color: rgb(199, 2, 2);
+}
+/* Submit Button */
+#submit-btn {
+    background-color: #28a745;
+}
+
+#submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Hint Message */
+#hint-message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Hide menu toggle button on desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #target-container {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .target-box {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .draggable-container {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .draggable-box {
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
