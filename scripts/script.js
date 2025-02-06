@@ -14,93 +14,7 @@ while (encryptedPlayer.length < 4) {
     }
 }
 
-// Event listeners for draggable items
-// draggableItems.forEach(item => {
-//     // Enable dragging for desktop and touch events for mobile
-//     if (item) {
-//         item.setAttribute("draggable", true);
-        
-//         item.addEventListener("dragstart", event => {
-//             event.dataTransfer.setData("value", event.target.children[0].innerText);
-//             event.dataTransfer.setData("bgColor", event.target.classList[1]);
-//         });
-
-//         // Mobile Compatibility - Touch Events for Dragging
-//         item.addEventListener("touchstart", (event) => {
-//             const touch = event.touches[0];
-//             event.target.style.position = "absolute";
-//             event.target.style.zIndex = 1000;
-//             event.target.style.left = touch.pageX + "px";
-//             event.target.style.top = touch.pageY + "px";
-//         });
-
-//         item.addEventListener("touchmove", (event) => {
-//             const touch = event.touches[0];
-//             event.target.style.left = touch.pageX + "px";
-//             event.target.style.top = touch.pageY + "px";
-//         });
-
-//         item.addEventListener("touchend", (event) => {
-//             const touch = event.changedTouches[0];
-//             const closestSlot = getClosestSlot(touch.pageX, touch.pageY);
-//             if (closestSlot) {
-//                 closestSlot.style.backgroundColor = event.target.classList[1];
-//                 closestSlot.innerText = event.target.children[0].innerText;
-//             }
-//             event.target.style.position = "";
-//         });
-//     }
-// });
-
-// // Function to find closest target slot
-// function getClosestSlot(x, y) {
-//     let closestSlot = null;
-//     let minDistance = Infinity;
-    
-//     targetSlots.forEach(slot => {
-//         const rect = slot.getBoundingClientRect();
-//         const distance = Math.sqrt(Math.pow(x - rect.left, 2) + Math.pow(y - rect.top, 2));
-        
-//         if (distance < minDistance) {
-//             minDistance = distance;
-//             closestSlot = slot;
-//         }
-//     });
-    
-//     return closestSlot;
-// }
-
-// // Event listeners for target slots
-// targetSlots.forEach(slot => {
-//     slot.addEventListener("dragover", event => {
-//         event.preventDefault();
-//         slot.classList.add("hovered");
-//     });
-
-//     slot.addEventListener("drop", event => {
-//         event.preventDefault();
-//         const value = event.dataTransfer.getData("value");
-//         const color = event.dataTransfer.getData("bgColor");
-//         slot.style.backgroundColor = color;
-//         slot.innerText = value;
-//     });
-
-//     // Mobile Compatibility - Touch Events for Dropping
-//     slot.addEventListener("touchmove", (event) => {
-//         event.preventDefault();
-//     });
-
-//     slot.addEventListener("touchend", (event) => {
-//         const touch = event.changedTouches[0];
-//         const value = event.target.innerText;
-//         const color = event.target.style.backgroundColor;
-//         event.target.innerText = value;
-//         event.target.style.backgroundColor = color;
-//     });
-// });
-
-// Code new
-
+// Code for desktop i.e. dragable
 draggableItems.forEach(item => {
     item.setAttribute("draggable", true); 
     item.addEventListener("dragstart", event => {
@@ -126,72 +40,107 @@ targetSlots.forEach(slot => {
         
     });
 });
+// Code for desktop i.e. dragable
 
-// code new end
+// code for mobile phones i.e. double click
+// const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-// gpt code start 
-// Detect if the device is mobile
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// if (isMobile) {
+//     console.log("Mobile detected: Switching to click functionality");
 
-if (isMobile) {
-    console.log("Mobile detected: Switching to click functionality");
+//     // Add click functionality for mobile devices
+//     draggableItems.forEach(item => {
+//         item.addEventListener("click", event => {
+//             // Retrieve the item's value and background color
+//             const value = item.children[0].innerText;
+//             const bgColor = item.classList[1];
 
-    // Add click functionality for mobile devices
-    draggableItems.forEach(item => {
-        item.addEventListener("click", event => {
-            // Retrieve the item's value and background color
+//             // Highlight potential drop targets for better UX
+//             targetSlots.forEach(slot => slot.classList.add("hovered"));
+
+//             // Add event listener to target slots for placing the item on click
+//             targetSlots.forEach(slot => {
+//                 slot.addEventListener("click", function handleDrop() {
+//                     // Apply value and background color to the clicked slot
+//                     slot.style.backgroundColor = bgColor;
+//                     slot.innerText = value;
+
+//                     // Remove highlighting and the temporary click listener
+//                     targetSlots.forEach(slot => slot.classList.remove("hovered"));
+//                     slot.removeEventListener("click", handleDrop);
+//                 });
+//             });
+//         });
+//     });
+// } else {
+//     console.log("Desktop detected: Drag and drop enabled");
+
+//     // Default drag-and-drop functionality for desktops
+//     draggableItems.forEach(item => {
+//         item.setAttribute("draggable", true);
+//         item.addEventListener("dragstart", event => {
+//             console.log("Draggable Item -->", event);
+//             event.dataTransfer.setData("value", event.target.children[0].innerText);
+//             event.dataTransfer.setData("bgColor", event.target.classList[1]);
+//         });
+//     });
+
+//     targetSlots.forEach(slot => {
+//         slot.addEventListener("dragover", event => {
+//             event.preventDefault();
+//             slot.classList.add("hovered");
+//         });
+
+//         slot.addEventListener("drop", event => {
+//             event.preventDefault();
+//             const value = event.dataTransfer.getData("value");
+//             const color = event.dataTransfer.getData("bgColor");
+//             slot.style.backgroundColor = color;
+//             slot.innerText = value;
+
+//             slot.classList.remove("hovered");
+//         });
+//     });
+// }
+// code for mobile phones i.e. double click
+
+// code for mobile phones i.e. Long Press (Hold and Drop) start
+let longPressTimer;
+
+draggableItems.forEach(item => {
+    item.addEventListener("touchstart", event => {
+        longPressTimer = setTimeout(() => {
+            // Highlight the item as selected after a long press
+            item.classList.add("selected");
             const value = item.children[0].innerText;
             const bgColor = item.classList[1];
 
-            // Highlight potential drop targets for better UX
+            // Highlight drop slots
             targetSlots.forEach(slot => slot.classList.add("hovered"));
 
-            // Add event listener to target slots for placing the item on click
+            // Allow dropping on any target slot
             targetSlots.forEach(slot => {
-                slot.addEventListener("click", function handleDrop() {
-                    // Apply value and background color to the clicked slot
+                slot.addEventListener("touchend", function handleDrop() {
+                    // Place the item
                     slot.style.backgroundColor = bgColor;
                     slot.innerText = value;
 
-                    // Remove highlighting and the temporary click listener
-                    targetSlots.forEach(slot => slot.classList.remove("hovered"));
-                    slot.removeEventListener("click", handleDrop);
+                    // Cleanup: remove highlights and event listener
+                    item.classList.remove("selected");
+                    targetSlots.forEach(slot => {
+                        slot.classList.remove("hovered");
+                        slot.removeEventListener("touchend", handleDrop);
+                    });
                 });
             });
-        });
-    });
-} else {
-    console.log("Desktop detected: Drag and drop enabled");
-
-    // Default drag-and-drop functionality for desktops
-    draggableItems.forEach(item => {
-        item.setAttribute("draggable", true);
-        item.addEventListener("dragstart", event => {
-            console.log("Draggable Item -->", event);
-            event.dataTransfer.setData("value", event.target.children[0].innerText);
-            event.dataTransfer.setData("bgColor", event.target.classList[1]);
-        });
+        }, 500); // Long press time: 500ms
     });
 
-    targetSlots.forEach(slot => {
-        slot.addEventListener("dragover", event => {
-            event.preventDefault();
-            slot.classList.add("hovered");
-        });
-
-        slot.addEventListener("drop", event => {
-            event.preventDefault();
-            const value = event.dataTransfer.getData("value");
-            const color = event.dataTransfer.getData("bgColor");
-            slot.style.backgroundColor = color;
-            slot.innerText = value;
-
-            slot.classList.remove("hovered");
-        });
+    item.addEventListener("touchend", () => {
+        clearTimeout(longPressTimer); // Cancel long press if released early
     });
-}
-
-// gpt code end
+});
+// code for mobile phones i.e. Long Press (Hold and Drop) end
 
 // Function to check the guess
 btn.addEventListener("click", checkGuess);
