@@ -104,43 +104,42 @@ targetSlots.forEach(slot => {
 // }
 // code for mobile phones i.e. double click
 
-// code for mobile phones i.e. Long Press (Hold and Drop) start
-let longPressTimer;
+// code for mobile phones i.e. Tap to Select, Tap to Place start
+let selectedItem = null;
 
 draggableItems.forEach(item => {
-    item.addEventListener("touchstart", event => {
-        longPressTimer = setTimeout(() => {
-            // Highlight the item as selected after a long press
-            item.classList.add("selected");
-            const value = item.children[0].innerText;
-            const bgColor = item.classList[1];
+    item.addEventListener("click", () => {
+        // Highlight the item as selected
+        if (selectedItem) {
+            selectedItem.classList.remove("selected");
+        }
+        selectedItem = item;
+        selectedItem.classList.add("selected");
 
-            // Highlight drop slots
-            targetSlots.forEach(slot => slot.classList.add("hovered"));
-
-            // Allow dropping on any target slot
-            targetSlots.forEach(slot => {
-                slot.addEventListener("touchend", function handleDrop() {
-                    // Place the item
-                    slot.style.backgroundColor = bgColor;
-                    slot.innerText = value;
-
-                    // Cleanup: remove highlights and event listener
-                    item.classList.remove("selected");
-                    targetSlots.forEach(slot => {
-                        slot.classList.remove("hovered");
-                        slot.removeEventListener("touchend", handleDrop);
-                    });
-                });
-            });
-        }, 500); // Long press time: 500ms
-    });
-
-    item.addEventListener("touchend", () => {
-        clearTimeout(longPressTimer); // Cancel long press if released early
+        // Highlight drop slots
+        targetSlots.forEach(slot => slot.classList.add("hovered"));
     });
 });
-// code for mobile phones i.e. Long Press (Hold and Drop) end
+
+targetSlots.forEach(slot => {
+    slot.addEventListener("click", () => {
+        if (selectedItem) {
+            // Get data from the selected item
+            const value = selectedItem.children[0].innerText;
+            const bgColor = selectedItem.classList[1];
+
+            // Place the item in the slot
+            slot.style.backgroundColor = bgColor;
+            slot.innerText = value;
+
+            // Cleanup: remove highlights and deselect the item
+            selectedItem.classList.remove("selected");
+            selectedItem = null;
+            targetSlots.forEach(slot => slot.classList.remove("hovered"));
+        }
+    });
+});
+// code for mobile phones i.e. Tap to Select, Tap to Place end
 
 // Function to check the guess
 btn.addEventListener("click", checkGuess);
