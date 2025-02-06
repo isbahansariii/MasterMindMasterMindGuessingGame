@@ -32,7 +32,6 @@
     background: black;
     width: 100%;
     text-align: center;
-    border-top: 2px solid darkred;
   }
 
   nav ul.show {
@@ -41,6 +40,5 @@
 
   nav ul li {
     padding: 10px;
-    border-bottom: 1px solid darkred;
   }
 }
