@@ -5,7 +5,8 @@ main{
 }
 
 .groupPhoto>img{
-    width: 90vw;
+    width: 90%;
+    height: auto;
 }
 
 #memberDescription{
