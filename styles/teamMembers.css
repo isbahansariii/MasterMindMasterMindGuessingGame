@@ -4,7 +4,7 @@ main{
     padding-top:10px;
 }
 
-.groupPhoto>img{
+.groupPhoto{
     width: 90% !important;
     height: auto;
 }
