@@ -1,30 +1,5 @@
-body{
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-    padding: 2px 4px;
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom:3px dashed darkred;
-}
-nav>ul{
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-nav>ul>li{
-    list-style-type:none ;
-}
-nav>ul>li>a{
-    color: white;
-    text-decoration: none;
-}
-nav>h1{
-    /* color: #333; */
-    font-size:20px;
+.align-start{
+    text-align: start;
 }
 .menu-toggle {
     display: none; /* Hide by default */

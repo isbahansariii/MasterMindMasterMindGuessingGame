@@ -1,34 +1,13 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-    padding: 2px 5px;
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom:3px dashed darkred;
-}
-nav>ul{
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
-nav>ul>li{
-    list-style-type:none ;
-}
-nav>ul>li>a{
-    color: white;
-    text-decoration: none;
-}
-nav>h1{
-    font-size:20px;
-}
+
 main{
     display: flex;
     padding-top:10px;
 }
+
+.groupPhoto>img{
+    width: 90vw;
+}
+
 #memberDescription{
     width: 60%;
     padding: 0.2% 2%; 

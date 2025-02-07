@@ -14,7 +14,6 @@ while (encryptedPlayer.length < 4) {
     }
 }
 
-// Code for desktop i.e. dragable
 draggableItems.forEach(item => {
     item.setAttribute("draggable", true); 
     item.addEventListener("dragstart", event => {
@@ -40,21 +39,18 @@ targetSlots.forEach(slot => {
         
     });
 });
-// Code for desktop i.e. dragable
 
-// code for mobile phones i.e. Tap to Select, Tap to Place start
+// for mobile
 let selectedItem = null;
 
 draggableItems.forEach(item => {
     item.addEventListener("click", () => {
-        // Highlight the item as selected
         if (selectedItem) {
             selectedItem.classList.remove("selected");
         }
         selectedItem = item;
         selectedItem.classList.add("selected");
 
-        // Highlight drop slots
         targetSlots.forEach(slot => slot.classList.add("hovered"));
     });
 });
@@ -62,24 +58,19 @@ draggableItems.forEach(item => {
 targetSlots.forEach(slot => {
     slot.addEventListener("click", () => {
         if (selectedItem) {
-            // Get data from the selected item
             const value = selectedItem.children[0].innerText;
             const bgColor = selectedItem.classList[1];
 
-            // Place the item in the slot
             slot.style.backgroundColor = bgColor;
             slot.innerText = value;
 
-            // Cleanup: remove highlights and deselect the item
             selectedItem.classList.remove("selected");
             selectedItem = null;
             targetSlots.forEach(slot => slot.classList.remove("hovered"));
         }
     });
 });
-// code for mobile phones i.e. Tap to Select, Tap to Place end
 
-// Function to check the guess
 btn.addEventListener("click", checkGuess);
 function checkGuess() {
     let decryptedPlayer = [];
@@ -131,7 +122,6 @@ function checkGuess() {
     }
 };
 
-// Restart Game function
 function restartGame() {
     encryptedPlayer = [];
     noOfGuess = 0;

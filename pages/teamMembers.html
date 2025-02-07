@@ -1,63 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Member</title>
 
     <!-- CSS links -->
-    <link rel="stylesheet" href="../styles/teamMembers.css">
-    <link rel="stylesheet" href="../styles/toogleMenu.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/teamMembers.css" />
+    <link rel="stylesheet" href="../styles/toogleMenu.css" />
+  </head>
+  <body>
     <nav>
-        <h1>MasterMind Guessing Game</h1>
-        <button class="menu-toggle">&#9776;</button>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./teamMembers.html">Team Member</a></li>
-            <li><a href="./game.html">Game</a></li>
-            <li><a href="./flowchart.html">FlowChart</a></li>
-        </ul>
+      <h1>MasterMind Guessing Game</h1>
+      <button class="menu-toggle">&#9776;</button>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./teamMembers.html">Team Member</a></li>
+        <li><a href="./game.html">Game</a></li>
+        <li><a href="./flowchart.html">FlowChart</a></li>
+      </ul>
     </nav>
 
     <main>
+      <!-- Team member description -->
+      <section id="memberDescription">
+        <h1 class="align-center">GROUP #02 [Team Members]</h1>
+        <br />
+        <p>
+          We are <strong>Group #02</strong>. A group having full of creativity
+          and dedication to compete with others.
+        </p>
 
-        <!-- Team member description -->
-        <section id="memberDescription">
+        <ol>
+          <li><h4>Neha Noor [ CSS Contributer ]</h4></li>
+          <li><h4>Isbah Ansari [ CSS & JavaScript Contributer ]</h4></li>
+          <li>
+            <h4>
+              Shaikh Muhammad Bilal (Team Leader)
+              <span>[ HTML & CSS & JavaScript Contributer ]</span>
+            </h4>
+          </li>
+          <li>
+            <h4>Waleed Alam Mallick <span>[ HTML Contributer ]</span></h4>
+          </li>
+          <li>
+            <h4>
+              Muhammad Daniyal Khan
+              <span>[ HTML & CSS & JavaScript Contributer ]</span>
+            </h4>
+          </li>
+          <li>
+            <h4>Farjad Zamir Khan <span>[ HTML Contributer ]</span></h4>
+          </li>
+          <li>
+            <h4>
+              Abdul Rehman Bin AmanUllah <span>[ HTML Contributer ]</span>
+            </h4>
+          </li>
+          <li>
+            <h4>Talha Ayub <span>[ JavaScript Contributer ]</span></h4>
+          </li>
+        </ol>
+      </section>
 
-            <h1 class="align-center">GROUP #02 [Team Members]</h1><br>
-            <p>We are <strong>Group #02</strong>. A group having full of creativity and dedication to compete with others.  </p>
-            
-            <ol>
-                <li><h4>Neha Noor [ CSS Contributer ]</h4></li>
-                <li><h4>Isbah Ansari [ CSS & JavaScript  Contributer ]</h4></li>
-                <li><h4>Shaikh Muhammad Bilal (Team Leader) <span>[ HTML & CSS & JavaScript Contributer ]</span></h4></li>
-                <li><h4>Waleed Alam Mallick <span>[ HTML Contributer ]</span></h4></li>
-                <li><h4>Muhammad Daniyal Khan <span>[ HTML & CSS & JavaScript Contributer ]</span></h4></li>
-                <li><h4>Farjad Zamir Khan <span>[ HTML Contributer ]</span></h4></li>
-                <li><h4>Abdul Rehman Bin AmanUllah <span>[ HTML Contributer ]</span></h4></li>
-                <li><h4>Talha Ayub <span>[ JavaScript Contributer ]</span></h4></li>
-            </ol>
-
+      <!-- Logical pic for UI -->
+      <section id="pictureDiv">
+        <section style="display: flex; gap: 6px; margin-bottom: 5px">
+          <img
+            src="../images/brain.png"
+            alt="brain image to show brain usage and power"
+            srcset=""
+            class="img"
+          />
+          <img
+            src="../images/brain2.jpeg"
+            alt="brain (shows thinking)"
+            srcset=""
+            class="img"
+          />
         </section>
-
-        <!-- Logical pic for UI -->
-        <section id="pictureDiv">
-            <section style="display: flex; gap: 6px; margin-bottom: 5px;">
-                <img src="../images/brain.png" alt="brain image to show brain usage and power" srcset="" class="img">
-                <img src="../images/brain2.jpeg" alt="brain (shows thinking)" srcset="" class="img">
-            </section>
-            <section style="display: flex; gap: 6px;">
-                <img src="../images/logic3.jpeg" alt="logic" srcset="" class="img">
-                <img src="../images/code4.jpeg" alt="code" srcset="" class="img">
-            </section>
-
+        <section style="display: flex; gap: 6px">
+          <img src="../images/logic3.jpeg" alt="logic" srcset="" class="img" />
+          <img src="../images/code4.jpeg" alt="code" srcset="" class="img" />
         </section>
+      </section>
+
     </main>
+
+    <!-- Group photo -->
+      <section class="groupPhoto">
+        <img src="../images/groupPhoto.jpg" alt="group photo">
+      </section>
 
     <!-- JS part for toogle menu -->
     <script src="../scripts/toogleMenu.js"></script>
-</body>
+  </body>
 </html>
