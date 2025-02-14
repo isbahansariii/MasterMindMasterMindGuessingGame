@@ -126,17 +126,31 @@ function restartGame() {
     encryptedPlayer = [];
     noOfGuess = 0;
     checkCount = 0;
+
+    // Reset target slots
     targetSlots.forEach(slot => {
         slot.textContent = "";
         slot.style.backgroundColor = "transparent";
     });
-    document.getElementById("hint-message").innerHTML = "";
+
+    // Reset draggable items for drag-and-drop & mobile tap-to-select
+    draggableItems.forEach(item => {
+        item.setAttribute("draggable", true);
+        item.classList.remove("selected");
+        item.style.cursor = "grab";
+    });
+
+    selectedItem = null;
+
+    // Generate a new secret code
     while (encryptedPlayer.length < 4) {
         let result = Math.floor(Math.random() * 6 + 1);
         if (!encryptedPlayer.includes(result)) {
             encryptedPlayer.push(result);
         }
     }
+
+    document.getElementById("hint-message").innerHTML = "";
     alert("Game restarted! A new secret code has been generated. Good luck!");
 }
 restartBtn.addEventListener("click", restartGame);
