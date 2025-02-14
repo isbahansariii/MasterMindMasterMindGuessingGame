@@ -1,10 +1,10 @@
 # MasterMindMasterMindGuessingGame
 Master Mind Guessing Game 🎯 (a group week wise project in the subject Internet Application Development)
 
-# Project Title: Challenge Final
+# Project Title: Master Mind Guessing Game
 
 ## Project Overview
-The "Challenge Final" is a web-based project showcasing interactive content, including flowcharts, a game, and team member details. The project emphasizes logic-based problem-solving and collaboration, offering users an engaging way to explore concepts through visual aids and interactive design.
+The "Master Mind Guessing Game" is a web-based project showcasing interactive content, including flowcharts, a game, and team member details. The project emphasizes logic-based problem-solving and collaboration, offering users an engaging way to explore concepts through visual aids and interactive design.
 
 ## Features
 - **Interactive Flowchart**: Visual representation of problem-solving logic.
@@ -15,7 +15,6 @@ The "Challenge Final" is a web-based project showcasing interactive content, inc
 
 ## Project Structure
 ```
-ChallengeFinal/
 ├── index.html           # Main entry point
 ├── images/              # Visual assets
 │   ├── brain.png
@@ -37,13 +36,10 @@ ChallengeFinal/
 ## Setup Instructions
 
 1. **Download the Project**
-   - Clone the repository or download the ZIP file containing the project files.
-
-2. **Extract Files**
-   - Extract the ZIP file into a folder of your choice.
+   - Clone the repository.
 
 3. **Open the Project**
-   - Navigate to the root directory (`ChallengeFinal`).
+   - Navigate to the root directory.
    - Open `index.html` in your preferred web browser.
 
 4. **Navigate the Website**
@@ -70,4 +66,4 @@ This project is for educational and demonstration purposes. Feel free to use or 
 
 ---
 
-Thank you for exploring the "Challenge Final" project!
+Thank you for exploring the "Master Mind Guessing Game" project!
