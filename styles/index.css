@@ -60,8 +60,6 @@ footer {
     padding: 10px;
     font-size: 14px;
     color: #aaa;
-    /* margin-top: 20px; */
-    /* text-align: center; */
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
