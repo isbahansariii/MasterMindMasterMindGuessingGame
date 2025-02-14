@@ -56,7 +56,7 @@ The "Master Mind Guessing Game" is a web-based project showcasing interactive co
 ## Team Members
 - This project was created by a group of passionate individuals collaborating to deliver an interactive and visually appealing web experience. Detailed profiles can be found on the "Team Members" page.
 
-#Teacher Name
+## Teacher Name
 Maám Dr. Humera Tariq 
 
 ## Future Enhancements
